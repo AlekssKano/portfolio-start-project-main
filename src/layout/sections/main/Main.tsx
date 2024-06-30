@@ -25,10 +25,10 @@ const Photo = styled.img`
     object-fit: cover;
     
 `
-const StyledMain = styled.div`
+const StyledMain = styled.section`
     min-height: 100vh;
-    background-color: #5875b3;
+    //background-color: #5875b3;
 `
 const MainTitle= styled.h1`
-    color: #f41414
+
 `
