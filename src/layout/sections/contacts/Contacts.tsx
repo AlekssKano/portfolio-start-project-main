@@ -1,34 +1,20 @@
 import React from 'react';
-import styled from "styled-components";
 import {SectionTitle} from "../../../components/SectionTitle";
 import {Button} from "../../../components/Button";
-
-export const Contact = () => {
+import {Container} from "../../../components/Container";
+import {S} from './Contacts_Styles'
+export const Contact: React.FC = () => {
     return (
-        <StyledContacts>
-            <SectionTitle>Contact</SectionTitle>
-            <StyledForm>
-                <Field placeholder={"name"}/>
-                <Field placeholder={"subject"}/>
-                <Field placeholder={"message"} as ={"textarea"}/>
-                <Button type={"submit"}>Send Message</Button>
-            </StyledForm>
-        </StyledContacts>
+        <S.Contacts>
+          <Container>
+              <SectionTitle>Contact</SectionTitle>
+              <S.Form>
+                  <S.Field placeholder={"name"}/>
+                  <S.Field placeholder={"subject"}/>
+                  <S.Field placeholder={"message"} as ={"textarea"}/>
+                  <Button type={"submit"}>Send Message</Button>
+              </S.Form>
+          </Container>
+        </S.Contacts>
     );
 };
-
-const StyledContacts = styled.section`
-    min-height: 50vh;
-    background-color: #f4ffd5;
-`
-const StyledForm = styled.form`
-    max-width: 500px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin: 0 auto;
-`
-const Field = styled.input`
-    
-`

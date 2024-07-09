@@ -1,53 +1,54 @@
+import AliceCarousel from 'react-alice-carousel';
+import 'react-alice-carousel/lib/alice-carousel.css';
 import React from 'react';
-import styled from "styled-components";
 import {FlexWrapper} from "../FlexWrapper";
+import {S} from './Slider_Styles'
 
-export const Slider = () => {
+type SlidePropsType = {
+    text: string,
+    userName: string
+}
+const Slide = () => {
     return (
-        <StyledSlider>
-            <FlexWrapper>
-                <Slide>
-                    <Text>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit.</Text>
-                    <Name>@ivan ivanow</Name>
-                </Slide>
-            </FlexWrapper>
-            <Pagination>
-                <span> </span>
-                <span> </span>
-                <span> </span>
-            </Pagination>
-        </StyledSlider>
-    );
-};
+        <S.Slide>
+            <S.Text>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing
+                elit.</S.Text>
+            <S.Name>@ivan ivanow</S.Name>
+        </S.Slide>
+    )
+}
+const items = [
+    <Slide text={"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit."} userName={""}/>,
+    <Slide text={"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicingelit."} userName={""}/>,
+    <Slide text={"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicingelit."} userName={""}/>
 
-const StyledSlider = styled.div`
-    border: 1px solid red;
-    max-width: 500px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+];
 
-`
+export const Slider = () => (
+   <S.Slider>
+       <AliceCarousel
+           mouseTracking
+           items={items}
+       />
+   </S.Slider>
 
-const Slide = styled.div`
-    text-align: center;
-`
-const Text = styled.p`
+);
 
-`
-const Name = styled.span`
 
-`
-const Pagination = styled.div `
-    span {
-        display: inline-block;
-        width: 10px;
-        height: 10px;
-        margin: 5px;
-        border-radius: 20%;
-        background-color: #fb00e3;
-    }
-`
 
+//
+//
+// export const Slider: React.FC = () => {
+//     return (
+//<S.Slider>
+//<FlexWrapper>
+//             </FlexWrapper>
+//             <S.Pagination>
+//                 <span> </span>
+//                 <span className={'active'}> </span>
+//                 <span> </span>
+//             </S.Pagination>
+//         </S.Slider>
+//     );
+// };

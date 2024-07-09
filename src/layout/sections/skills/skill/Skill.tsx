@@ -1,35 +1,25 @@
 import React from 'react';
-import styled from "styled-components";
 import {Icon} from "../../../../components/icon/Icon";
-
-type SkillPropsType={
+import {FlexWrapper} from "../../../../components/FlexWrapper";
+import {S} from './../Skills_Styles'
+type SkillPropsType = {
     iconId: string;
     title: string;
     description: string;
 
 }
-export const Skill = (props:SkillPropsType) => {
+export const Skill = (props: SkillPropsType) => {
     return (
-       <StyledSkill>
+        <S.Skill>
 
-               <Icon iconId={props.iconId}/>
-               <SkillTitle>{props.title}</SkillTitle>
-               <SkillText>{props.description}</SkillText>
-       </StyledSkill>
+            <FlexWrapper direction="column" align={"center"}>
+                <S.IconWrapper>
+                    <Icon iconId={props.iconId}/>
+                </S.IconWrapper>
+
+                <S.SkillTitle>{props.title}</S.SkillTitle>
+                <S.SkillText>{props.description}</S.SkillText>
+            </FlexWrapper>
+        </S.Skill>
     );
 };
-
-
-const StyledSkill = styled.div`
-    width: 30%;
-    background-color: rgba(131, 97, 97, 0.29);
-    margin: 10px;
-
-`
-const SkillTitle = styled.h3`
-
-`
-
-const SkillText = styled.p`
-
-`

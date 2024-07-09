@@ -1,34 +1,27 @@
 import React from 'react';
-import styled from "styled-components";
 import photo from '../../../assets/images/photo.jpg'
 import {FlexWrapper} from "../../../components/FlexWrapper";
+import {Container} from "../../../components/Container";
+import {S} from './Main_Styles'
 
-export const Main = () => {
+export const Main: React.FC = () => {
     return (
 
-        <StyledMain>
-            <FlexWrapper align={"center"} justify={"space-around"}>
-                <div>
-                    <span>Hi There</span>
-                    <h2>I am Svetlana Dyablo</h2>
-                    <MainTitle>A Web Developer. </MainTitle>
-                </div>
-                <Photo src={photo} alt=""/>
-            </FlexWrapper>
-        </StyledMain>
+        <S.Main>
+            <Container>
+                <FlexWrapper align={"center"} justify={"space-around"} wrap={"wrap"}>
+                    <div>
+                        <S.SmallText>Hi There</S.SmallText>
+                        <S.Name>I am <span>Svetlana Dyablo</span></S.Name>
+                        <S.MainTitle>A Web Developer. </S.MainTitle>
+                    </div>
+                    <S.PhotoWrapper>
+                        <S.Photo src={photo} alt=""/>
+                    </S.PhotoWrapper>
+
+                </FlexWrapper>
+            </Container>
+        </S.Main>
 
     );
 };
-const Photo = styled.img`
-    width: 350px;
-    height: 430px;
-    object-fit: cover;
-    
-`
-const StyledMain = styled.section`
-    min-height: 100vh;
-    //background-color: #5875b3;
-`
-const MainTitle= styled.h1`
-
-`

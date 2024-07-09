@@ -1,5 +1,8 @@
 import React from 'react';
-import styled from "styled-components";
+import {Link} from '../../../../components/Link';
+import {Button} from "../../../../components/Button";
+import {S} from './../Works_Styles';
+
 
 type WorkPropsType = {
     title: string;
@@ -7,39 +10,23 @@ type WorkPropsType = {
     src: string;
 
 }
-export const Work = (props: WorkPropsType) => {
+export const Work: React.FC<WorkPropsType> = (props: WorkPropsType) => {
     return (
-        <StyledWork>
-            <Image src={props.src} alt=""/>
-            <Title>{props.title}</Title>
-            <Text>{props.text}</Text>
-            <Link href={"#"}>demo</Link>
-            <Link href={"#"}>code</Link>
-        </StyledWork>
+        <S.Work>
+            <S.ImageWrapper>
+                <S.Image src={props.src} alt=""/>
+                <Button>
+                    view project
+                </Button>
+            </S.ImageWrapper>
+
+            <S.Description>
+                <S.Title>{props.title}</S.Title>
+                <S.Text>{props.text}</S.Text>
+                <Link active href={"#"}>demo</Link>
+                <Link href={"#"}>code</Link>
+            </S.Description>
+
+        </S.Work>
     );
 };
-
-const StyledWork = styled.div`
-    background-color: #b1df4e;
-    width: 100%;
-    max-width: 540px;
-
-
-`
-
-const Image = styled.img`
-    width: 100%;
-    height: 260px;
-    object-fit: cover;
-`
-
-const Link = styled.a`
-
-`
-const Title = styled.h3`
-
-`
-
-const Text = styled.p`
-
-`
